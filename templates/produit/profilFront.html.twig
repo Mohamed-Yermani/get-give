@@ -1,0 +1,45 @@
+{% extends 'base-front.html.twig' %}
+
+{% block activeProfil %}
+    class=active
+{% endblock %}
+
+
+{% block content %}
+
+    <div class=innerbannerwrap>
+        <div class=content></div>
+        <div style="height: 600px; position: relative; overflow: hidden;"><h2 class=bannerHeadline><span>Profil</span></h2></div>
+    </div>
+    <section class=innerpage_all_wrap>
+        <div class=container>
+            <div class=row><h2 class=heading>Voici Votre <span>Informations</span></h2>
+
+                <p class=headParagraph></p>
+                <div  class="feedbackContact-open formcontact clearfix">
+                    <div class=form-group>
+                        <h4 style="display: inline;color: black">Votre Email:</h4>
+                        <h4 style="display: inline">{{ app.user.email }}</h4>
+                    </div>
+                    <div class=form-group>
+                        <h4 style="display: inline;color: black">Votre Nom:</h4>
+                        <h4 style="display: inline">{{ app.user.lastname }}</h4>
+                    </div>
+                    <div class=form-group>
+                        <h4 style="display: inline;color: black">Votre Prenom:</h4>
+                        <h4 style="display: inline">{{ app.user.firstname }}</h4>
+                    </div>
+
+                    <a class="btn" style="margin-top: 50px" href="{{ path('app_user_edit_profile',{'id':app.user.id}) }}">Modifier mes Informations</a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+        </div>
+    </section>
+
+
+{% endblock %}
